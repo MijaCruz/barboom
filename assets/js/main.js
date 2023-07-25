@@ -96,9 +96,11 @@ function sumaCantidad(e) {
             CarritoTotal()
         }
     })
-
 }
 function vaciarLocalStorage() {
     localStroge.clear();
 }
-
+function buy(){
+    userName = prompt("INGRESE SU NOMBRE");
+    swal("GRACIAS POR TU COMPRA "+userName.toUpperCase(),`${userName}, en breve se procesara tu pedido`) ;
+}
