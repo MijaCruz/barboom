@@ -46,14 +46,14 @@ function renderCarrito() {
     
             <td class="table__productos">
               <img src=${item.img}  alt="">
-              <h6 class="title" style="font-size: 15px;">${item.title}</h6>
+              <h6 class="title text-white" style="font-size: 15px;">${item.title}</h6>
             </td>
 
-            <td class="table__price" style="font-size: 15px;"><p>${item.precio}</p></td>
+            <td class="table__price mt-2" style="font-size: 15px;"><p>${item.precio}</p></td>
             
-            <td class="table__cantidad">
-              <input type="text" min="1" value=${item.cantidad} class="input__elemento">
-              <button class="delete btn btn-danger">x</button>
+            <td class="table__cantidad text-center">
+              <input type="text text-center" min="1" value=${item.cantidad} class="input__elemento" readonly>
+              <button class="delete btn btn-light fs-2" style="border-radius: 5px;">x</button>
             </td>`
         tr.innerHTML = Content;
         tbody.append(tr)
