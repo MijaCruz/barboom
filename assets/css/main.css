@@ -1,0 +1,120 @@
+:root{
+    --primary: #FFE7E3;
+    --secondary: #F2D680;
+    --tertiary: #2B1914;
+    --dark: #0D0D0D;
+    --pink:#F279A9;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+@media (max-width: 991.98px) {
+    .nav-bar{
+        background: #2B1914;
+
+    }
+}
+/*.main-loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../img/loading.gif) center no-repeat #ffffff;
+}*/
+body{
+    background-color: var(--primary);
+}
+a {
+    text-decoration: none;
+    color: var(--secondary);
+    padding: 10px;
+    font-size: 1.05rem;
+    border-radius: 15px;
+}
+h2{
+    color:var(--dark);
+    font-weight: 350;
+}
+p{
+    color: var(--dark);
+}
+.logo {
+    max-width: 6rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.link-item{
+    text-decoration: none;
+    color:var(--secondary);
+}
+.link-item:hover,
+.link-item:active{
+    color: var(--pink);
+    text-decoration: none;
+}
+
+.nav-list li a:hover{
+    background-color: var(--primary);
+    color: var(--tertiary);
+}
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+    color: #FFE7E3;
+}
+@media screen and (max-width: 576px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .abrir-menu {
+        color: var(--primary);
+    }
+    .cerrar-menu {
+        color: var(--primary);
+    }
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--dark);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax #1c1c1c74;
+    }
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+    .nav-list li a {
+        color: var(--primary);
+    }
+}
+
+#container-about .img-wrap img{
+    width: 100%;
+}
+.container-section{
+    background-color: var(--primary);
+}
