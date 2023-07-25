@@ -42,9 +42,6 @@ h2{
     color:var(--dark);
     font-weight: 350;
 }
-p{
-    color: var(--dark);
-}
 .logo {
     max-width: 6rem;
     cursor: pointer;
