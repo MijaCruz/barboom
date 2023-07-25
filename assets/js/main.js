@@ -11,9 +11,11 @@ function addToCarritoItem(e) {
     const item = button.closest('.card')
     const itemTitle = item.querySelector('.card-title').textContent;
     const itemPrice = item.querySelector('.precio').textContent;
+    const itemImg = document.querySelector('.card-img');
     const newItem = {
         title: itemTitle,
         precio: itemPrice,
+        img: itemImg,
         cantidad: 1
     }
     addItemCarrito(newItem)
@@ -46,7 +48,9 @@ function renderCarrito() {
               <img src=${item.img}  alt="">
               <h6 class="title" style="font-size: 15px;">${item.title}</h6>
             </td>
+
             <td class="table__price" style="font-size: 15px;"><p>${item.precio}</p></td>
+            
             <td class="table__cantidad">
               <input type="text" min="1" value=${item.cantidad} class="input__elemento">
               <button class="delete btn btn-danger">x</button>
@@ -66,7 +70,7 @@ function CarritoTotal() {
         const precio = Number(item.precio.replace("S/", ''))
         Total = Total + precio * item.cantidad
     })
-    itemCartTotal.innerHTML = `Total S/${Total}`
+    itemCartTotal.innerHTML = `Total: S/ ${Total}.00`
     addLocalStorage()
 }
 function removeItemCarrito(e) {
@@ -74,16 +78,13 @@ function removeItemCarrito(e) {
     const tr = buttonDelete.closest(".ItemCarrito")
     const title = tr.querySelector('.title').textContent;
     for (let i = 0; i < carrito.length; i++) {
-
         if (carrito[i].title.trim() === title.trim()) {
             carrito.splice(i, 1)
         }
     }
     tr.remove()
     CarritoTotal()
-
 }
-
 function sumaCantidad(e) {
     const sumaInput = e.target
     const tr = sumaInput.closest(".ItemCarrito")
@@ -93,7 +94,6 @@ function sumaCantidad(e) {
             sumaInput.value < 1 ? (sumaInput.value = 1) : sumaInput.value;
             item.cantidad = sumaInput.value;
             CarritoTotal()
-
         }
     })
 
