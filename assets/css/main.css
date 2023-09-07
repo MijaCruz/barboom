@@ -6,12 +6,18 @@
     --pink:#F279A9;
 }
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0 0 0 0 ;
+    padding: 0 0 0 0 ;
+    border: 0;
     box-sizing: border-box;
     font-family: sans-serif;
     text-decoration: none;
     list-style: none;
+}
+body{
+    border: 0;
+    margin: 0px;
+    padding: 0px;
 }
 @media (max-width: 991.98px) {
     .nav-bar{
